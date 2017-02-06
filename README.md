@@ -39,7 +39,7 @@ Important au developpement du site  je vais commençer avec :
 !!!!!!!!!!!! (TOUS SES FICHIERS SONT DES CLASSES Sauf Jquery ) !!!!!!!!!!
 
 ##MESSAGE   :
-   /*
+   
 *@class nom : message fonction : est un objet de message contient les attrs :
 * @attr : id : identifiant de message
 * @attr : titre titre de message
@@ -51,21 +51,20 @@ Important au developpement du site  je vais commençer avec :
 * *@param id
 * @param titre
 * ...
- */
-    @toTr() RETURN un formatage de balise TR contenant tous les attributs du message Exemple : amine.chabib@gmail.com	Hello World !	GoodBye World !	27 Janvier 2017 # Temps 16 H : 9 Min
+ 
 
 ##DriverManager
 
-   /*
+   
 *@class nom : drivermanager fonction : implement les fonction de gestion des messages
 * @function getMessage
 * @function addMessage
 * @function removemessgae
 * @functionupdatemessage
- */
+ 
   
 ##Firebasejs :
-    /*
+    
 *@class nom : firebasejs enfant de driver fonction : permet de connecter et gerer les message par des fonctions firebase .
 * @constructor
 * @function addMessage ajouter un nouveau message
@@ -73,19 +72,19 @@ Important au developpement du site  je vais commençer avec :
 * @function removemessage supprimer un message
 * *@param idMess identifiant de message
 * @functoon updatemessage mise a jour des messages
- */
+ 
 ##Ajax      :
 
-/*
+
 *@class  classe nom : ajax  fonction : enfant de super classe driver contient les fonction de gestion de message par ajax
  * @function getMessage
  * @function addMessage
  * @function removemessgae
  * @functionupdatemessage
- */
+ 
  
  ##UserManager
- /*
+ 
 * @class nom : usermanager fonction : gestion des utilisateur contient les fonctions :
 * @function createuser : ecrire user par un mot de passe et un email
 * *@param user
@@ -97,25 +96,25 @@ Important au developpement du site  je vais commençer avec :
 * @function facebookconnect ecrire une compte directement on utilise facebook
 * @function googleconnect la meme chose que la dernniere mais on a avec google plus
 * pas des attrs
- */
+ 
 ##User
-  /*
+  
 *@class nom : user fonction : est un objet de l'utlisateur contient les attr :
 * @attr email email d'utilisateur
 * @attr password  password d'utilisateur
 * @constructor
 * *@paarm email
 * *@param password
- */
+ 
 ##Driver
-/*
+
 *@class nom : user fonction : est un objet de l'utlisateur contient les attr :
 * @attr email email d'utilisateur
 * @attr password  password d'utilisateur
 * @constructor
 * *@paarm email
 * *@param password
- */
+ 
 
 ##Jquery
     Ils contient les fonctions jquery que j'ai utilisé de temps en temps ( des fois j'utilise EcmasCript5 et Ecmascript6 document.querySelector .....)
