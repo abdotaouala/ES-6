@@ -85,7 +85,7 @@ Important au developpement du site  je vais commençer avec :
  
  ##UserManager
  
-* @class nom : usermanager fonction : gestion des utilisateur contient les fonctions :
+ @class nom : usermanager fonction : gestion des utilisateur contient les fonctions :
 * @function createuser : ecrire user par un mot de passe et un email
 * *@param user
 * @function connect : connecter par un mot de passe et un email
@@ -99,7 +99,7 @@ Important au developpement du site  je vais commençer avec :
  
 ##User
   
-*@class nom : user fonction : est un objet de l'utlisateur contient les attr :
+@class nom : user fonction : est un objet de l'utlisateur contient les attr :
 * @attr email email d'utilisateur
 * @attr password  password d'utilisateur
 * @constructor
@@ -108,13 +108,16 @@ Important au developpement du site  je vais commençer avec :
  
 ##Driver
 
-*@class nom : user fonction : est un objet de l'utlisateur contient les attr :
+@class nom : user fonction : est un objet de l'utlisateur contient les attr :
 * @attr email email d'utilisateur
 * @attr password  password d'utilisateur
 * @constructor
 * *@paarm email
 * *@param password
  
+ ## Diagramme de classe :
+ 
+ ![alt tag](https://github.com/abdotaouala/ES-6/blob/master/diagramme%20de%20classe.png)
 
 ##Jquery
     Ils contient les fonctions jquery que j'ai utilisé de temps en temps ( des fois j'utilise EcmasCript5 et Ecmascript6 document.querySelector .....)
