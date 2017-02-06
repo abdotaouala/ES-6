@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- firebse-->
+    <script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-messaging.js"></script>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<!--  navbar  -->
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project TaoualaEmail</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="../navbar-static-top/" id="menuEmail"></a></li>
+                <li><a href="../navbar-fixed-top/" id="liksignout">Deconnection</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
+<div class="btn-group pull-right" data-toggle="buttons">
+    <label class="btn btn-primary" id="ajax">
+        <input type="radio" name="options"  autocomplete="off" > Ajax
+    </label>
+    <label class="btn btn-primary active" id="firebase" >
+        <input type="radio" name="options"  autocomplete="off"  checked="true"> Firebase
+    </label>
+</div>
+<div class="container" id="messageManager">
+    <h2>Ajouter Messages</h2>
+    <div class="alert alert-danger hidden" id="alert-danger">
+        <strong>Danger!</strong> verifier le titre et l'objet!!
+    </div>
+    <form action="">
+        <div class="form-group">
+            <input type="text" name="titre" class="form-control" id="titre" placeholder="Titre" title="Titre" required>
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="etat" value="0" required>U
+            </label>
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="etat" value="1" required>N
+            </label>
+            <textarea name="objet" class="form-control" id="objet" cols="30" rows="10" placeholder="Objet" required></textarea>
+            <button id="ajouter" class="btn btn-primary">Ajouter</button>
+        </div>
+    </form>
+</div>
+
+<div class="container" id="listMessage">
+    <h2>Liste de vos messages</h2>
+
+    <table class="table table-sm">
+        <thead>
+        <tr>
+            <th>
+                <button class="btn btn-danger delete" id="deleteAll">DeleteAllSelectRow
+                </button>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <input class="form-check-input" id='selectAll' type="checkbox">
+            </th>
+            <th>Numero</th>
+            <th>Date</th>
+            <th>Titre</th>
+            <th>Objet</th>
+            <th>Etat</th>
+            <th><span class="glyphicon glyphicon-remove"></span>
+            </th>
+
+        </tr>
+        </thead>
+        <tbody id="tablebody">
+
+        </tbody>
+    </table>
+</div>
+<table class="hidden" id="divAdd">
+    <tr>
+        <td><input class="form-check-input" type="checkbox"></td>
+        <th scope="row" class="tdNumero">1</th>
+        <td class="tdEmail"></td>
+        <td class="tdTitre"></td>
+        <td class="tdObjet"></td>
+        <td class="tdEtat"></td>
+
+        <td>
+            <button class="btn btn-danger delete" id="delete"><span class="glyphicon glyphicon-remove"></span></button>
+        </td>
+    </tr>
+</table>
+<!-- Modal -->
+<!-- Modal pour la validation de la supprission-->
+<div class="modal fade" id="suppression" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Supprssion</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Valider la suppression
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" id="supprimer" class="btn btn-danger">Suppremer</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<!-- Modal pour la authentification -->
+<div class="modal fade" id="authentification" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true" data-backdrop="static" data-keyboard="false" style="background: black;opacity: 1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="titleAuth">
+                    <div class="page-header">
+                        <h1 class="logo">TaoualaEmail
+                            <small>Welcome to our place!</small>
+                        </h1>
+                    </div>
+                </h5>
+            </div>
+            <div class="modal-body">
+                <link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
+                <div class="middlePage">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Please Sign In</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <a href="#"><img src="dist/img/fb.png" width="100%" id="facebook"/></a><br/>
+
+                                    <a href="#"><img src="dist/img/gplus.png" width="100%" id="google"/></a>
+                                </div>
+                                <div class="col-md-7" style="border-left:1px solid #ccc;height:160px">
+                                    <form class="form-horizontal">
+                                        <fieldset>
+                                            <div class="alert alert-danger hidden" id="loginerror">
+                                                <strong>Danger!</strong> <span id="msglogin"></span>
+                                            </div>
+                                            <input id="loginemail" name="loginmail" type="email"
+                                                   placeholder="Enter User Email" class="form-control input-md">
+                                            <div class="spacing">
+                                                <input type="checkbox" name="checkboxes"
+                                                                        id="checkboxes-0" value="1">
+                                                <small> Remember me</small>
+                                            </div>
+                                            <input id="loginpassword" name="loginpassword" type="password"
+                                                   placeholder="Enter Password" class="form-control input-md">
+                                            <div class="spacing">
+                                                <a href="#">
+                                                <small> Forgot Password?</small>
+
+                                            </a>
+                                                <a href="#">
+                                                    <small> SignUp</small>
+
+                                                </a>
+                                            </div>
+
+                                            <button id="signin199" name="singlebutton"
+                                                    class="btn btn-info btn-sm pull-right">Sign In
+                                            </button>
+                                            <button id="signup" name="singlebutton"
+                                                    class="btn btn-primary btn-sm pull-right">Sign up
+                                            </button>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p><a href="">About</a> · ENSET SID-1</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+</body>
+<script>
+    var config = {
+        apiKey: "AIzaSyCYh4UmGckAY2V-YOPS7bvaM3iRjoOaqf4",
+        authDomain: "projet1-bb086.firebaseapp.com",
+        databaseURL: "https://projet1-bb086.firebaseio.com",
+        storageBucket: "projet1-bb086.appspot.com",
+        messagingSenderId: "975488831755"
+    };
+    firebase.initializeApp(config);
+    ref = firebase.database().ref("/messages");
+    var driver1;
+</script>
+<script src="dist/js/main.js"></script>
+</html>
