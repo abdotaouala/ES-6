@@ -40,7 +40,7 @@ Important au developpement du site  je vais commençer avec :
 
 ##MESSAGE   :
    
-*@class nom : message fonction : est un objet de message contient les attrs :
+@class nom : message fonction : est un objet de message contient les attrs :
 * @attr : id : identifiant de message
 * @attr : titre titre de message
 * @attr : objet objet de message
@@ -56,7 +56,7 @@ Important au developpement du site  je vais commençer avec :
 ##DriverManager
 
    
-*@class nom : drivermanager fonction : implement les fonction de gestion des messages
+@class nom : drivermanager fonction : implement les fonction de gestion des messages
 * @function getMessage
 * @function addMessage
 * @function removemessgae
@@ -65,7 +65,7 @@ Important au developpement du site  je vais commençer avec :
   
 ##Firebasejs :
     
-*@class nom : firebasejs enfant de driver fonction : permet de connecter et gerer les message par des fonctions firebase .
+@class nom : firebasejs enfant de driver fonction : permet de connecter et gerer les message par des fonctions firebase .
 * @constructor
 * @function addMessage ajouter un nouveau message
 * *@param message
@@ -74,14 +74,11 @@ Important au developpement du site  je vais commençer avec :
 * @functoon updatemessage mise a jour des messages
  
 ##Ajax      :
-
-
-*@class  classe nom : ajax  fonction : enfant de super classe driver contient les fonction de gestion de message par ajax
+@class  classe nom : ajax  fonction : enfant de super classe driver contient les fonction de gestion de message par ajax
  * @function getMessage
  * @function addMessage
  * @function removemessgae
  * @functionupdatemessage
- 
  
  ##UserManager
  
