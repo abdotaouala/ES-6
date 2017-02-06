@@ -114,7 +114,7 @@ Important au developpement du site  je vais commençer avec :
  
  ## Diagramme de classe :
  
- ![alt tag](https://github.com/abdotaouala/ES-6/blob/master/diagramme%20de%20classe.png)
+ ![alt tag](https://github.com/abdotaouala/ES-6/blob/master/diagramme%20de%20classe%20mail.png)
 
 ##Jquery
     Ils contient les fonctions jquery que j'ai utilisé de temps en temps ( des fois j'utilise EcmasCript5 et Ecmascript6 document.querySelector .....)
