@@ -31,7 +31,6 @@ Public (Dossier)     - Il Contient les elements accessible par les clients
             - css    - Il contient les elements css specialement (Bootstrap) car j'ai utilisé un Css Inline 
             - img    - Il contient les images utilisés
             - js     - Il contient les elements JS  (##LE CORPS DU SITE)
-                     -FIREBASE (DOSSIER) Il contient les fichiers de API Firebase
                      -(...) /*LES AUTRES FICHIERS JE VAIS VOUS PARLER D'EUX ULTERIEUREMENT*/
                 
 Je vais vous parles du dossier Js qui contient le fonctionnement du site ce dossier contient des fichiers avec EcmaScript6 qui jouent un Rôle 
@@ -40,36 +39,84 @@ Important au developpement du site  je vais commençer avec :
 !!!!!!!!!!!! (TOUS SES FICHIERS SONT DES CLASSES Sauf Jquery ) !!!!!!!!!!
 
 ##MESSAGE   :
-    ATTR (id,email,objet,date)
-
-    CONSTRUCTOR SI 5 PARAMETRES UTILISER LE CONSTRUCTEUR D'INITIALISATION SINON UTILISER UN CONSTRUCTEUR DE RECOPIE
-
+   /*
+*@class nom : message fonction : est un objet de message contient les attrs :
+* @attr : id : identifiant de message
+* @attr : titre titre de message
+* @attr : objet objet de message
+* @attr : etat etat de message
+* @attr : date date d'ajout le message
+* @attr email email de user entrer le message
+* @constructor
+* *@param id
+* @param titre
+* ...
+ */
     @toTr() RETURN un formatage de balise TR contenant tous les attributs du message Exemple : amine.chabib@gmail.com	Hello World !	GoodBye World !	27 Janvier 2017 # Temps 16 H : 9 Min
 
 ##DriverManager
 
-    @lister() IL IMPORTE TOUS LES MESSAGES DU FICHIER messages.json avec AFirebase ou avec Ajax
-    @ajouter(email,objet,corps) IL AJOUTE un Message en fonction de AFirebase ou Ajax et Retourne un résultat Visuel
-    @supprimer(id) IL SUPPRIMER un Message en fonction de AFirebase ou Ajax et Retourne un résultat Visuel
-    @modifier(id)  IL Modifie un Message en fonction de AFirebase ou Ajax et Retourne un résultat Visuel
-    @
+   /*
+*@class nom : drivermanager fonction : implement les fonction de gestion des messages
+* @function getMessage
+* @function addMessage
+* @function removemessgae
+* @functionupdatemessage
+ */
   
-##AFirebase :
-    [doc(include("Readme.md"))]
-    ces fonctions utilisent le fonctionnement de (API FIREBASE) 
-
-    STATIC @creerCompte(email,password) RETURN ERROR IF EXISTS  (   CREER UN COMPTE UTILISATEUR )
-    STATIC @connexion(email,password)   RETURN USER  OU NULL    (   CONNECTER   L'UTILISATEUR   )
-    STATIC @deconnexion()               RETURN ERROR IF EXISTS  (   DECONNECTER L'UTILISATEUR   )
+##Firebasejs :
+    /*
+*@class nom : firebasejs enfant de driver fonction : permet de connecter et gerer les message par des fonctions firebase .
+* @constructor
+* @function addMessage ajouter un nouveau message
+* *@param message
+* @function removemessage supprimer un message
+* *@param idMess identifiant de message
+* @functoon updatemessage mise a jour des messages
+ */
 ##Ajax      :
 
-    ces fonctions utilisent le fonctionnement de (la classe Ajax que j'ai crée avec Ecmascript6)
+/*
+*@class  classe nom : ajax  fonction : enfant de super classe driver contient les fonction de gestion de message par ajax
+ * @function getMessage
+ * @function addMessage
+ * @function removemessgae
+ * @functionupdatemessage
+ */
  
-    STATIC @creerXhr()                  RETURN XMLHTTPREQUEST (COMPATIBLE AVEC TOUT LES NAVIGATEURS)
-    STATIC @creerRequete(type,url,data, callback) RETURN TEXTRESPONSE (TYPE ( GET OU POST ) URL (DESTINATION DE REQ) DATA (données a envoyer s'ils sont disponible ou null ou cas contraire) callback( FUNCTION aprés le retour de la requette Ajax)
-    STATIC @creerCompte(email,password) RETURN ERROR IF EXISTS
-    STATIC @connexion(email,password)   RETURN USER  OU NULL
-    STATIC @deconnexion()               RETURN ERROR IF EXISTS
+ ##UserManager
+ /*
+* @class nom : usermanager fonction : gestion des utilisateur contient les fonctions :
+* @function createuser : ecrire user par un mot de passe et un email
+* *@param user
+* @function connect : connecter par un mot de passe et un email
+* @function signin : ecrire une session par le mot de passe et un email
+* *@param user
+* @function getuserfromform : ecrire un objet user qui apartir de la formulaire d'inscription
+* @function signout : fonction permet de femer la session
+* @function facebookconnect ecrire une compte directement on utilise facebook
+* @function googleconnect la meme chose que la dernniere mais on a avec google plus
+* pas des attrs
+ */
+##User
+  /*
+*@class nom : user fonction : est un objet de l'utlisateur contient les attr :
+* @attr email email d'utilisateur
+* @attr password  password d'utilisateur
+* @constructor
+* *@paarm email
+* *@param password
+ */
+##Driver
+/*
+*@class nom : user fonction : est un objet de l'utlisateur contient les attr :
+* @attr email email d'utilisateur
+* @attr password  password d'utilisateur
+* @constructor
+* *@paarm email
+* *@param password
+ */
+
 ##Jquery
     Ils contient les fonctions jquery que j'ai utilisé de temps en temps ( des fois j'utilise EcmasCript5 et Ecmascript6 document.querySelector .....)
     Jquery.min.js : version minifié de Jquery
@@ -86,7 +133,7 @@ Important au developpement du site  je vais commençer avec :
 
 ##Temps Total pour le DEV
 
-Environ 34 Heures
+Environ 36 Heures
     
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
