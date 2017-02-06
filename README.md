@@ -166,11 +166,14 @@ comme j'ai déja dit ce Projet est juste pour les etudes je n'ai utilisé aucun 
 
 Abdelfatah Taouala
   
- 
- ![alt tag](https://github.com/abdotaouala)
+
+
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 ##License
 
 ce projet est développé avec des technologies OpenSource 
+
+ ![alt tag](http://www.techweekeurope.co.uk/wp-content/uploads/2014/04/opensource.jpeg)
