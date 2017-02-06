@@ -177,4 +177,4 @@ ce projet est développé avec des technologies OpenSource
  <center>
   ![alt tag](https://avatars2.githubusercontent.com/u/16292164?v=3&u=08cba6b74f39aec11d1aa440dceee6eb9275928b&s=400)
   </center>
-
+<div style="text-align:center"><img src ="https://avatars2.githubusercontent.com/u/16292164?v=3&u=08cba6b74f39aec11d1aa440dceee6eb9275928b&s=400" /></div>
