@@ -46,7 +46,7 @@ Important au developpement du site  je vais commençer avec :
 
     @toTr() RETURN un formatage de balise TR contenant tous les attributs du message Exemple : amine.chabib@gmail.com	Hello World !	GoodBye World !	27 Janvier 2017 # Temps 16 H : 9 Min
 
-##MessageService
+##DriverManager
 
     @lister() IL IMPORTE TOUS LES MESSAGES DU FICHIER messages.json avec AFirebase ou avec Ajax
     @ajouter(email,objet,corps) IL AJOUTE un Message en fonction de AFirebase ou Ajax et Retourne un résultat Visuel
@@ -55,7 +55,7 @@ Important au developpement du site  je vais commençer avec :
     @
   
 ##AFirebase :
-    
+    [doc(include("Readme.md"))]
     ces fonctions utilisent le fonctionnement de (API FIREBASE) 
 
     STATIC @creerCompte(email,password) RETURN ERROR IF EXISTS  (   CREER UN COMPTE UTILISATEUR )
