@@ -161,9 +161,11 @@ comme j'ai déja dit ce Projet est juste pour les etudes je n'ai utilisé aucun 
 
 ##Authors
 
-Abdelfatah Taouala
+$$Abdelfatah Taouala
   
 
+  ![alt tag](https://avatars2.githubusercontent.com/u/16292164?v=3&u=08cba6b74f39aec11d1aa440dceee6eb9275928b&s=400)
+ 
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -174,7 +176,4 @@ Abdelfatah Taouala
 ce projet est développé avec des technologies OpenSource 
 
  ![alt tag](http://www.techweekeurope.co.uk/wp-content/uploads/2014/04/opensource.jpeg)
- <center>
-  ![alt tag](https://avatars2.githubusercontent.com/u/16292164?v=3&u=08cba6b74f39aec11d1aa440dceee6eb9275928b&s=400)
-  </center>
-<div style="text-align:center"><img src ="https://avatars2.githubusercontent.com/u/16292164?v=3&u=08cba6b74f39aec11d1aa440dceee6eb9275928b&s=400" /></div>
+
